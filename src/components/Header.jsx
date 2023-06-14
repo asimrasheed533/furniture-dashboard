@@ -131,9 +131,9 @@ export default function Header({ setSidebarOpen }) {
             </ClickAwayListener>
           )}
         </div>
-        <div className="container__main__header__right__button">
+        {/* <div className="container__main__header__right__button">
           <ThemeSwitch />
-        </div>
+        </div> */}
       </div>
     </div>
   );

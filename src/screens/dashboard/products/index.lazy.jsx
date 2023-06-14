@@ -46,7 +46,7 @@ export default function Products() {
     <div className="container__main__content__listing">
       <div className="container__main__content__listing__header">
         <div className="container__main__content__listing__header__left">
-          <div className="container__main__content__listing__header__left__search">
+          {/* <div className="container__main__content__listing__header__left__search">
             <input
               type="text"
               placeholder="Search"
@@ -55,7 +55,7 @@ export default function Products() {
               }}
               className="container__main__content__listing__header__left__search__field"
             />
-          </div>
+          </div> */}
         </div>
         <div className="container__main__content__listing__header__right">
           <Link
