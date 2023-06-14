@@ -30,9 +30,7 @@ export default function orders() {
           <div className="container__main__content__listing__table__header__entry">
             Actions
           </div>
-          <div className="container__main__content__listing__table__header__entry">
-            images
-          </div>
+
           <div className="container__main__content__listing__table__header__entry">
             Order ID
           </div>
@@ -48,9 +46,7 @@ export default function orders() {
           <div className="container__main__content__listing__table__header__entry">
             Items
           </div>
-          <div className="container__main__content__listing__table__header__entry">
-            Status
-          </div>
+
           <div className="container__main__content__listing__table__header__entry">
             Payment
           </div>
@@ -98,20 +94,12 @@ function TableEntry() {
         <TableEntryViewButton />
         <TableEntryDeleteButton />
       </div>
-      <TableEntryImage
-        className="container__main__content__listing__table__content__list__entry"
-        style={{ gap: 10, flexWrap: "wrap" }}
-      >
-        <Avatar className="container__main__content__listing__table__content__list__entry__img" />
-        <Avatar className="container__main__content__listing__table__content__list__entry__img" />
-        <Avatar className="container__main__content__listing__table__content__list__entry__img" />
-      </TableEntryImage>
+
       <TableEntryText>123456789</TableEntryText>
       <TableEntryText>11/12/22</TableEntryText>
       <TableEntryText>qasim</TableEntryText>
       <TableEntryText>+123234560</TableEntryText>
       <TableEntryText>6</TableEntryText>
-      <TableEntryText>Delivery Made</TableEntryText>
       <TableEntryText>Payment Pending</TableEntryText>
     </div>
   );

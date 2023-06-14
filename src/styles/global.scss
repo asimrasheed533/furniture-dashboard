@@ -5,7 +5,7 @@ html {
   --colorLight: #929292;
   --colorReverse: #ffffff;
   --colorLightReverse: #e7e7e7;
-  --transparentColor: rgba(31, 31, 31, 0.9);
+  --transparentColor: rgba(65, 63, 63, 0.9);
   --boxShadow: rgba(0, 0, 0, 0.1);
 }
 html[data-theme="dark"] {
@@ -13,16 +13,16 @@ html[data-theme="dark"] {
   --backgroundDarkColor: #242424;
   --color: #f1f1f1;
   --colorLight: #afafaf;
-  --colorReverse: #00a827;
+  --colorReverse: rgb(48 106 237 / 80%);
   --colorLightReverse: #333333;
   --transparentColor: rgba(26, 26, 26, 0.9);
   --boxShadow: rgba(0, 0, 0, 0.459);
 }
 
 :root {
-  --primary: #00a827;
-  --primaryDark: #23963e;
-  --secondary: #20c068;
+  --primary: rgb(48 106 237 / 80%);
+  --primaryDark: rgb(48 106 237 / 80%);
+  --secondary: rgb(48 106 237 / 80%);
   --secondaryDark: #dbd6d3;
 }
 *,
