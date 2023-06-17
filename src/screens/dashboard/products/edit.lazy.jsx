@@ -47,6 +47,7 @@ export default function ProductEdit() {
         price,
         category: category.value,
         img: image,
+        stock,
       })
       .then((res) => {
         alert("Product updated successfully");
