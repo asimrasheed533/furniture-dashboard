@@ -4,12 +4,11 @@ import {
   TableEntryImage,
   TableEntryText,
 } from "components";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
-import { Search } from "react-feather";
-import { useLocation } from "react-router-dom";
 import axios from "../../../utils/axios";
-import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Categories() {
   const location = useLocation();
@@ -30,18 +29,7 @@ export default function Categories() {
   return (
     <div className="container__main__content__listing">
       <div className="container__main__content__listing__header">
-        <div className="container__main__content__listing__header__left">
-          <form className="container__main__content__listing__header__left__search">
-            <input
-              type="text"
-              placeholder="Search"
-              className="container__main__content__listing__header__left__search__field"
-            />
-            <button className="container__main__content__listing__header__left__search__button">
-              <Search size={20} color="currentColor" />
-            </button>
-          </form>
-        </div>
+        <div className="container__main__content__listing__header__left"></div>
         <div className="container__main__content__listing__header__right">
           <Link
             to={location.pathname.toLowerCase() + "/add"}
@@ -65,21 +53,21 @@ export default function Categories() {
           </div>
         </div>
         <div className="container__main__content__listing__table__content">
-          {category.map((item) => {
-            <TableEntry item={item} key={item._id} />;
-          })}
+          {category.map((item) => (
+            <TableEntry item={item} key={item._id} />
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-function TableEntry() {
+function TableEntry({ item }) {
   return (
     <div className="container__main__content__listing__table__content__list">
       <div className="container__main__content__listing__table__content__list__entry">
         <TableEntryEditButton
-          onClick={`categories/${item._id}/edit`}
+          to={`/dashboard/categories/edit/${item?._id}`}
           state={{ ...item }}
         />
         <TableEntryDeleteButton
@@ -91,7 +79,6 @@ function TableEntry() {
         />
       </div>
       <TableEntryText>{item?.name}</TableEntryText>
-
       <TableEntryImage src={item?.img} />
     </div>
   );
