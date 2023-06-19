@@ -1,6 +1,7 @@
 import { Input, Select, Textarea } from "components";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import { ImageUploaderSingle } from "../../../components/ImageUploaderSingle";
 import axios from "../../../utils/axios";
 import { useBackLocation } from "global";
@@ -47,7 +48,6 @@ export default function ProductEdit() {
         price,
         category: category.value,
         img: image,
-        stock,
       })
       .then((res) => {
         alert("Product updated successfully");
@@ -86,15 +86,15 @@ export default function ProductEdit() {
           <div className="product__form__col__panel__heading">Pricing</div>
           <Input
             type="number"
-            label="Selling price"
+            label="price"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             placeholder="Enter selling price"
           />
           <Input
             type="number"
-            label="Add Stock"
-            value={price}
+            label="Edit Stock"
+            value={stock}
             onChange={(e) => setStock(e.target.value)}
             placeholder="Enter Stock"
           />

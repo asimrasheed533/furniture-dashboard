@@ -77,10 +77,10 @@ export default function ProductAdd() {
           <div className="product__form__col__panel__heading">Pricing</div>
           <Input
             type="number"
-            label="Price"
+            label="Selling Price"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            placeholder="Enter price"
+            placeholder="Enter selling price"
           />
           <Input
             type="number"
@@ -111,7 +111,7 @@ export default function ProductAdd() {
             onClick={handleSubmit}
             className="container__main__content__details__buttons__button container__main__content__details__buttons__primary"
           >
-            Add Product
+            Add New Product
           </Link>
           <Link
             to={backLocation}

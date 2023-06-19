@@ -1,6 +1,5 @@
 import {
   TableEntryDeleteButton,
-  TableEntryDescription,
   TableEntryEditButton,
   TableEntryImage,
   TableEntryText,
@@ -9,9 +8,25 @@ import {
 import { Link } from "react-router-dom";
 import { Search } from "react-feather";
 import { useLocation } from "react-router-dom";
+import axios from "../../../utils/axios";
+import { useEffect, useState } from "react";
 
 export default function Categories() {
   const location = useLocation();
+  const [category, setCategory] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getData = () => {
+    setLoading(true);
+    axios.get("categories").then((res) => {
+      setCategory(res.data);
+      setLoading(false);
+    });
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="container__main__content__listing">
       <div className="container__main__content__listing__header">
@@ -50,30 +65,9 @@ export default function Categories() {
           </div>
         </div>
         <div className="container__main__content__listing__table__content">
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
-          <TableEntry />
+          {category.map((item) => {
+            <TableEntry item={item} key={item._id} />;
+          })}
         </div>
       </div>
     </div>
@@ -84,11 +78,21 @@ function TableEntry() {
   return (
     <div className="container__main__content__listing__table__content__list">
       <div className="container__main__content__listing__table__content__list__entry">
-        <TableEntryEditButton />
-        <TableEntryDeleteButton />
+        <TableEntryEditButton
+          onClick={`categories/${item._id}/edit`}
+          state={{ ...item }}
+        />
+        <TableEntryDeleteButton
+          onClick={() => {
+            axios.delete(`categories/${item?._id}`).then((res) => {
+              console.log(res);
+            });
+          }}
+        />
       </div>
-      <TableEntryText>john devved</TableEntryText>
-      <TableEntryImage />
+      <TableEntryText>{item?.name}</TableEntryText>
+
+      <TableEntryImage src={item?.img} />
     </div>
   );
 }
