@@ -91,7 +91,7 @@ export default function ProductAdd() {
           <ImageUploaderSingle
             label="Image"
             value={image}
-            onChange={(e) => setImage(e)}
+            // onChange={(e) => setImage(e)}
           />
         </div>
       </div>
