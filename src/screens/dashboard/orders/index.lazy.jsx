@@ -61,9 +61,9 @@ export default function Orders() {
           <div className="container__main__content__listing__table__header__entry">
             Phone No.
           </div>
-          <div className="container__main__content__listing__table__header__entry">
+          {/* <div className="container__main__content__listing__table__header__entry">
             Status
-          </div>
+          </div> */}
           <div className="container__main__content__listing__table__header__entry">
             Payment
           </div>
@@ -119,7 +119,7 @@ function TableEntry({ data, onFetch }) {
       </TableEntryText>
       <TableEntryText>{data.phone ? data.phone : "No Phone"}</TableEntryText>
       <TableEntryText>{data.status}</TableEntryText>
-      <TableEntryText>{data.total ? data.total : "No Payment"}</TableEntryText>
+      {/* <TableEntryText>{data.total ? data.total : "No Payment"}</TableEntryText> */}
       <TableEntryText>
         {data.cardNumber ? data.cardNumber : "No Card Number"}
       </TableEntryText>
